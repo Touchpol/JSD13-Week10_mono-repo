@@ -4,13 +4,17 @@
   "description": "",
   "license": "ISC",
   "author": "",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "node --env-file=.env --watch src/server.js",
     "start": "node src/server.js"
   },
   "dependencies": {
-    "express": "^5.2.1"
+    "@supabase/supabase-js": "^2.116.0",
+    "bcrypt": "^6.0.0",
+    "express": "^5.2.1",
+    "mongodb": "^7.6.0",
+    "mongoose": "^9.9.5"
   }
 }

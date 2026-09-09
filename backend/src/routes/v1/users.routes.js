@@ -23,12 +23,12 @@ router.post("/", (req, res, next) => {
         .json({ error: "username, email and password are required!" });
     }
 
-    const hightestId = users.reduce(
+    const highestId = users.reduce(
       (max, user) => Math.max(max, Number(user.id)),
       0,
     );
 
-    const nextId = String(hightestId + 1);
+    const nextId = String(highestId + 1);
 
     const newUser = {
       id: nextId,
@@ -91,7 +91,7 @@ router.delete("/:id", (req, res, next) => {
 
     // users.splice(index, 1);
 
-    return res.status(204).send();
+    return res.status(204).end();
   } catch (err) {
     next(err);
   }
