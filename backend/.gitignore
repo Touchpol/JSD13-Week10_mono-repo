@@ -3,7 +3,5 @@
 
 # ไม่เอาโฟลเดอร์ library ของ Node.js (ทั้งตัวนอกและตัวใน backend)
 node_modules/
-dist/
-build/
 
 
