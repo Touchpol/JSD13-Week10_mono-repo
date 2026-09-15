@@ -1,8 +1,10 @@
 import mongoose from "mongoose";
+import bcrypt from "bcrypt";
 
 const userSchema = mongoose.Schema(
   {
     username: { type: String, unique: true },
+    role: { type: String, enum: ["user", "admin"], default: "user" },
     email: {
       type: String,
       unique: true,
@@ -14,5 +16,11 @@ const userSchema = mongoose.Schema(
   },
   { timestamps: true },
 );
+
+// Hash password before saving to database
+userSchema.pre("save", async function () {
+  if (!this.isModified("password")) return;
+  this.password = await bcrypt.hash(this.password, 12);
+});
 
 export const User = mongoose.model("User", userSchema);

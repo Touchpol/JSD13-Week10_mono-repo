@@ -1,0 +1,27 @@
+@baseUrl = http://localhost:3001/api/v2
+
+### Read all users
+GET {{baseUrl}}/users/pg
+
+### Create a new user
+POST {{baseUrl}}/users/pg
+Content-Type: application/json
+
+{
+  "username": "Asahi",
+  "email": "asahi@example.com",
+  "password": "pass123"
+}
+
+### Update a user
+PUT {{baseUrl}}/users/pg/38721728-53e9-4d14-a3fe-44653a94f286
+Content-Type: application/json
+
+{
+  "username": "Asahipentax",
+  "email": "asahipentax@example.com",
+  "password": "newpassword123"
+}
+
+### Delete User
+DELETE {{baseUrl}}/users/pg/35bcc849-6433-4940-ab3b-9f1d291a3c6b
